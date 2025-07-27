@@ -14,8 +14,8 @@ import userRoutes from "./routes/users.routes.js";
 const mongo = process.env.MONGO;
 
 const app = express();
-const server = createServer(app);
-const io = connectToSocket(server);
+const server = createServer(app); //create raw http server
+const io = connectToSocket(server); //real time web socket communication
 
 app.set("port", process.env.PORT || 8000);
 app.use(cors());

@@ -27,7 +27,7 @@ function HomeComponent() {
                 <div style={{ display: "flex", alignItems: "center" }}>
 
                     <h2>Apna Video Call</h2>
-                </div>
+                </div> 
 
                 <div style={{ display: "flex", alignItems: "center" }}>
                     <IconButton onClick={
@@ -35,11 +35,11 @@ function HomeComponent() {
                             navigate("/history")
                         }
                     }>
-                        <RestoreIcon />
+                        <RestoreIcon /><p>History</p>
                     </IconButton>
-                    <p>History</p>
+                    
 
-                    <Button onClick={() => {
+                    <Button style={ {fontSize:"1.35rem"}} onClick={() => {
                         localStorage.removeItem("token")
                         navigate("/auth")
                     }}>
@@ -54,9 +54,9 @@ function HomeComponent() {
             <div className="meetContainer">
                 <div className="leftPanel">
                     <div>
-                        <h2>Providing Quality Video Call Just Like Quality Education</h2>
+                        <h2>Providing Quality Video Call at Apna Video App </h2>
 
-                        <div style={{ display: 'flex', gap: "10px" }}>
+                        <div style={{ display: 'flex', gap: "10px" ,marginTop:"1rem"}}>
 
                             <TextField onChange={e => setMeetingCode(e.target.value)} id="outlined-basic" label="Meeting Code" variant="outlined" />
                             <Button onClick={handleJoinVideoCall} variant='contained'>Join</Button>
